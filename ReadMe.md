@@ -129,4 +129,3 @@ Users can create and browse tasks in the following categories:
 4. Expand into **mobile apps & multilingual support** based on user feedback.
 
 🚀 **With this master plan, TimeCoin is set to become a global hub for skill-sharing and collaboration!**
-
