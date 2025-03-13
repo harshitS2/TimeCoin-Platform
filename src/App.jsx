@@ -9,7 +9,7 @@ import Dashboard from "./pages/Home";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
+      <div className=" bg-[#F8FAFC]">
         <Navbar />
         <div className="container mx-auto">
           <Routes>
