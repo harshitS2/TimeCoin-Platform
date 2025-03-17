@@ -1,6 +1,8 @@
 import React from "react";
 import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import Cards from "../components/Cards";
+import Skills from "../components/Skills";
 
 const Home = () => {
   return (
@@ -63,7 +65,7 @@ const Home = () => {
           <span className="ml-2 text-[#65758B]">User Rating</span>
         </div>
       </div>
-      <div className="py-20 bg-gradient-to-b from-background to-timecoin-50/30 ">
+      <div className="py-20 bg-gradient-to-b from-background to-timecoin-50/30 container px-4 mx-auto max-w-6xl">
         <div className="text-center mb-12">
           {/* Title */}
           <h2 className="text-3xl font-bold mb-4 animate-fade-up">
@@ -76,10 +78,11 @@ const Home = () => {
             through a time-based economy.
           </p>
         </div>
-        <div className="">
-          <div className="">
-            
-          </div>
+        <div className="mb-12">
+          <Cards />
+        </div>
+        <div className="container px-4 mx-auto max-w-6xl">
+        <Skills />
         </div>
       </div>
     </div>
