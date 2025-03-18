@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import {Link} from "react-router-dom";
 const Login = () => {
   const [visible, setVisible] = useState(false);
   const onEyeClick = () => {
@@ -53,6 +54,7 @@ const Login = () => {
         >
           Login
         </button>
+        <Link to='/register' className=" flex text-center items-center justify-center mt-4 text-gray-600"> Don't have an account? <span className="text-blue-600">Register Now</span></Link>
       </form>
     </div>
   );
