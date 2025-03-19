@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Clock } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,9 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const hideButtons =
+    location.pathname === "/register" || location.pathname === "/login";
 
   return (
     <header
@@ -55,10 +59,11 @@ const Navbar = () => {
         </nav>
 
         {/* Desktop Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
-          <Link
-            to="/login"
-            className="btn btn-outline btn-sm rounded-full 
+        {!hideButtons && (
+          <div className="hidden md:flex items-center space-x-4">
+            <Link
+              to="/login"
+              className="btn btn-outline btn-sm rounded-full 
                bg-white/95 hover:bg-gray-100 
                border-2 border-solid hover:border-gray-400 
                text-gray-700 hover:text-gray-900 
@@ -67,12 +72,12 @@ const Navbar = () => {
                transition-all duration-300 
                ease-in-out
                active:bg-gray-200"
-          >
-            Sign In
-          </Link>
-          <Link
-            to="/register"
-            className="btn btn-primary btn-sm rounded-full 
+            >
+              Sign In
+            </Link>
+            <Link
+              to="/register"
+              className="btn btn-primary btn-sm rounded-full 
                bg-[#1272A6] hover:bg-[#0F5C87] 
                text-white 
                font-semibold 
@@ -81,10 +86,11 @@ const Navbar = () => {
                ease-in-out 
                shadow-md hover:shadow-lg
                active:bg-[#0D4A6E]"
-          >
-            Get Started
-          </Link>
-        </div>
+            >
+              Get Started
+            </Link>
+          </div>
+        )}
 
         {/* Mobile menu button */}
         <button
@@ -139,10 +145,11 @@ const Navbar = () => {
           >
             Categories
           </Link>
-          <div className="flex flex-row space-x-4 pt-4 border-t border-gray-200">
-            <Link
-              to="/login"
-              className="btn btn-outline w-full rounded-full 
+          {!hideButtons && (
+            <div className="flex flex-row space-x-4 pt-4 border-t border-gray-200">
+              <Link
+                to="/login"
+                className="btn btn-outline w-full rounded-full 
                bg-white/95 hover:bg-gray-100 
                border-gray-300 hover:border-gray-400 
                text-gray-700 hover:text-gray-900 
@@ -151,12 +158,12 @@ const Navbar = () => {
                font-medium 
                focus:ring-2 focus:ring-gray-300 focus:ring-offset-1
                active:bg-gray-200"
-            >
-              Sign In
-            </Link>
-            <Link
-              to="/register"
-              className="btn btn-primary w-full rounded-full 
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/register"
+                className="btn btn-primary w-full rounded-full 
                bg-[#1272A6] hover:bg-[#0F5C87] 
                text-white 
                py-2 px-4 
@@ -165,10 +172,11 @@ const Navbar = () => {
                font-medium 
                focus:ring-2 focus:ring-[#1272A6] focus:ring-offset-1
                active:bg-[#0D4A6E]"
-            >
-              Get Started
-            </Link>
-          </div>
+              >
+                Get Started
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </header>
