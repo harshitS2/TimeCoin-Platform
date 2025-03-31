@@ -179,7 +179,7 @@ const HowItWorks = () => {
 
         <div className="mt-12">
           <Link to="/register">
-            <button className="inline-block bg-blue-400 hover:bg-[#1272A6] text-white font-semibold py-3 px-8 rounded-full text-lg transition-colors">
+            <button className="inline-block bg-[#0A99DD] hover:bg-[#1272A6] text-white font-semibold py-3 px-8 rounded-full text-lg transition-colors">
               Create Your Account
             </button>
           </Link>
